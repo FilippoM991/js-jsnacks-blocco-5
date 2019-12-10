@@ -3,7 +3,7 @@
 // elementi da uno e dall’altro
 // es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
 var arraUno = ["a", "b", "c", "d", "e", "f"];
-var arrayDue = [1,2,3,4];
+var arrayDue = [1,2,3,4,5,6,7,8];
 var sommaArray = unisciArray(arraUno, arrayDue);
 console.log(sommaArray);
 function unisciArray(a,b){
@@ -16,7 +16,7 @@ function unisciArray(a,b){
             var elemento_a = a[i];
             var elemento_b = b[i];
             unione.push(elemento_a);
-            if (elemento_b == true) {
+            if (i < b.length) {
                 unione.push(elemento_b);
             }
         }
@@ -25,10 +25,10 @@ function unisciArray(a,b){
         for (var i = 0; i < b.length; i++) {
             var elemento_a = a[i];
             var elemento_b = b[i];
-            unione.push(elemento_b);
-            if (elemento_a == true) {
+            if (i < a.length) {
                 unione.push(elemento_a);
             }
+            unione.push(elemento_b);
         }
     }
     return unione
